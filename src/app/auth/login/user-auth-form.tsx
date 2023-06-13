@@ -81,6 +81,25 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
 
   function signGoogle() {
     signIn("google")
+    .then((callback) => {
+      console.log(callback);
+      
+      if (callback?.ok) {
+        console.log("login con Google OK");
+      }
+
+      if (callback?.error) {
+        toast({
+          title: "Algo salió mal",
+          description: (
+            <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+              <p className="text-white">{callback?.error}</p>
+            </pre>
+          ),
+        })
+      }
+    })
+    .finally(() => setIsLoading(false))
   }
 
   return (
