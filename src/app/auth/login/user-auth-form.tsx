@@ -80,6 +80,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   }
 
   function signGoogle() {
+    setIsLoading(true)
     signIn("google")
     .then((callback) => {
       console.log(callback);
