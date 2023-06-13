@@ -52,7 +52,7 @@ export default async function LoginComponent() {
 function loginButton() {
 
     return (
-        <Link href="/api/auth/signin"><Button>Login</Button></Link>
+        <Link href="/auth/login"><Button>Login</Button></Link>
         
     )
 }

@@ -120,7 +120,8 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
           </span>
         </div>
       </div>
-      <Button variant="outline" type="button" disabled={isLoading} onClick={() => signIn("google")}>
+      <Button variant="outline" type="button" disabled={isLoading} 
+        onClick={signGoogle}>
         {isLoading ? (
           <Icons.spinner className="w-4 h-4 mr-2 animate-spin" />
         ) : (
