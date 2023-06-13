@@ -17,11 +17,12 @@ export async function middleware(req: NextRequest) {
 /*
 export default withAuth({
   pages: {
-    signIn: "/login",
-    signOut: "/logout"
+    signIn: "/auth/login",
+    signOut: "/auth/logout"
   },
 });
 */
+
 export const config = { 
-  matcher: ["/admin/:path*", "/cursos/:path*"]
+  matcher: ["/admin/:path*", "/curso/:path*"]
 };

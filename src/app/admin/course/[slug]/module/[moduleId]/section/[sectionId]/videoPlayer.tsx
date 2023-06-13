@@ -16,7 +16,6 @@ interface Props {
 }
 
 export default function VideoPlayerRC({ videoId }: Props) {
-  console.log("videoId: " + videoId);
 
   useEffect(() => {
     //@ts-ignore

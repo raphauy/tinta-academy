@@ -36,7 +36,7 @@ function UserMenu() {
         <nav className="flex gap-6 text-lg font-medium text-muted-foreground">
             <ul>
                 <li>
-                    <Link href="/cursos">Cursos</Link>
+                    <Link href="/">Cursos</Link>
                 </li>
             </ul>
         </nav>

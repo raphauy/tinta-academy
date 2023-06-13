@@ -83,13 +83,13 @@ export function DropdownMenuProfile({ children }: Props ) {
           <span>API</span>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          <LogOut className="w-4 h-4 mr-2" />
-          <span>
-            <Link href="/api/auth/signout">Logout</Link>
-          </span>
-          <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-        </DropdownMenuItem>
+        <Link href="/api/auth/signout">
+          <DropdownMenuItem className="cursor-pointer">
+              <LogOut className="w-4 h-4 mr-2" />
+              <span>Logout</span>
+              <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+          </DropdownMenuItem>
+        </Link>
       </DropdownMenuContent>
     </DropdownMenu>
   );

@@ -10,6 +10,7 @@ import { fontSans } from '@/utils/front/fonts'
 import { cn } from "@/lib/utils"
 import AuthContext from '@/utils/front/AuthContext'
 import { Navbar } from './navbar'
+import { ReduxProviders } from '@/redux/provider'
 
 
 export const metadata: Metadata = {
@@ -39,21 +40,23 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <html lang="en" suppressHydrationWarning>
         <head />
         <body className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable)}>
-          <AuthContext>
+          <ReduxProviders>
+            <AuthContext>
 
-            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-              <div className="container relative flex flex-col min-h-screen">
-                <Navbar />
-                
-                <div className="flex flex-col flex-1">
-                  {children}                
-                  <Toaster />
-                </div>
-              </div>            
-              <TailwindIndicator />
-            </ThemeProvider>
+              <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+                <div className="container relative flex flex-col min-h-screen">
+                  <Navbar />
+                  
+                  <div className="flex flex-col flex-1">
+                    {children}                
+                    <Toaster />
+                  </div>
+                </div>            
+                <TailwindIndicator />
+              </ThemeProvider>
 
-          </AuthContext>          
+            </AuthContext>          
+          </ReduxProviders>  
         </body>
       </html>
     </>

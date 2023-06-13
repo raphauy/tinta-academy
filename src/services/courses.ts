@@ -1,4 +1,7 @@
+"use server"
+
 import { CourseFormValues } from "@/app/admin/course/add/courseForm";
+import { DataCourse } from "@/types/dataTypes";
 import { prisma } from "@/utils/server/db";
 
 
