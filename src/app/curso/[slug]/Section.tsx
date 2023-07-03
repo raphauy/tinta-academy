@@ -29,9 +29,9 @@ export default function SectionComponent({ slug, section }: SectionProps) {
   return (
     <>
       <Link href={`/curso/${slug}/${section.id}`} className="cursor-pointer">
-        <div className={`text-sm flex items-center gap-x-4 p-1 rounded-md mt-2 ml-10
-          hover:bg-tinta-natural hover:text-tinta-marron
-          ${selected ? "text-tinta-marron bg-tinta-natural font-bold" : "text-tinta-natural"}`} 
+        <div className={`text-sm text-muted-foreground flex items-center gap-x-4 p-1 rounded-md mt-2 ml-10
+          hover:bg-tinta-natural
+          ${selected ? " bg-tinta-natural font-bold" : ""}`} 
         >
           {section.title}
         </div>

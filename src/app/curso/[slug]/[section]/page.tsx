@@ -27,7 +27,7 @@ function useSectionPage(sectionId: string, slug: string) {
                 console.log("No se encontró la sección: " + sectionId)
                 return
             }
-            setSection(sectionFound)
+            sectionFound && setSection(sectionFound)
             fetchModule(sectionFound.moduleId)
         }
         fetchSection()
@@ -71,7 +71,9 @@ function SectioniPage() {
             </div>
             <div className="w-full">
                 
-                <VideoPlayerRC videoId={section.videoUrl.split('/').slice(-2).join('/').replace(/\.[^.]+$/, '')} />         
+                {section.videoUrl &&
+                    <VideoPlayerRC videoId={section.videoUrl.split('/').slice(-2).join('/').replace(/\.[^.]+$/, '')} />
+                }
                         
             </div>
             <div className="mt-5 text-lg">

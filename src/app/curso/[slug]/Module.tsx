@@ -59,7 +59,7 @@ export default function ModuleComponent({ slug, module, onOpenSideBar}: MolduleP
     <>
       <li
         key={module.id}
-        className="flex items-center p-1 mt-2 text-sm rounded-md cursor-pointer text-tinta-natural gap-x-4 hover:bg-tinta-natural hover:text-tinta-marron"
+        className="flex items-center p-1 mt-2 text-sm rounded-md cursor-pointer text-muted-foreground gap-x-4 hover:bg-tinta-natural "
         onClick={() => handleClick()}
       >
         <span className="block float-left text-2xl">

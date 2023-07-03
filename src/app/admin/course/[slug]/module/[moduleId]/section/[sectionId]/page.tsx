@@ -52,7 +52,9 @@ export default async function SectionPage({ params, searchParams }: Props) {
         </div>
         <div className="w-full">
         
-          <VideoPlayerRC videoId={section.videoUrl.split('/').slice(-2).join('/').replace(/\.[^.]+$/, '')} />         
+          {section.videoUrl &&
+            <VideoPlayerRC videoId={section.videoUrl.split('/').slice(-2).join('/').replace(/\.[^.]+$/, '')} />
+          }
                     
         </div>
         <div className="mt-5 text-lg">

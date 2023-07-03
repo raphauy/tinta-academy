@@ -20,7 +20,7 @@ import slugify from "slugify"
 const profileFormSchema = z.object({
   title: z.string()
     .min(2, { message: "Title must be at least 2 characters." })
-    .max(60,{ message: "Title must not be longer than 60 characters." }),
+    .max(100,{ message: "Title must not be longer than 100 characters." }),
   slug: z.string({required_error: "Press the button to generate slug."}),
   shortContent: z.string()
     .max(100,{ message: "Short content must not be longer than 100 characters." }).optional(),

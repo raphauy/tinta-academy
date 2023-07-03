@@ -37,7 +37,7 @@ model Section {
   id                String    @id @default(cuid())
   title             String
   content           String?
-  videoUrl          String
+  videoUrl          String?
   videoSource       String
   moduleId          String
   module            Module    @relation(fields: [moduleId], references: [id], onDelete: Cascade)
@@ -79,7 +79,7 @@ model Account {
 model Session {
   id           String   @id @default(cuid())
   sessionToken String   @unique
-  userId       String   @unique
+  userId       String
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }

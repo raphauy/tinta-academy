@@ -66,18 +66,18 @@ function SideBar({ slug }: Props) {
 
     return curso ? (
       <div>
-      <div className={`bg-tinta-marron h-screen p-2 pt-4 relative duration-700 
+      <div className={`h-screen p-2 pt-4 mr-1 relative duration-700 
       ${open ? "w-60" : "w-12"}`} >
         <ArrowLeft
           className={`text-tinta-marron text-3xl rounded-full bg-white 
-          absolute -right-3 top-10 border cursor-pointer 
+          absolute -right-3 top-3 border cursor-pointer 
           ${!open && "rotate-180"}`} onClick={() => handleClick()}/>
 
         <div className="inline-flex">
           <MapPin
-            className={`bg-white text-2xl rounded cursor-pointer block 
+            className={` text-2xl rounded cursor-pointer block 
             float-left text-tinta-marron mr-1 ml-1 duration-1000 ${open && "rotate-[360deg]"} `}/>
-          <p className={`text-white origin-left font-medium text-xl ${!open && "scale-0"}`}>
+          <p className={`text-tinta-marron origin-left font-medium text-xl ${!open && "scale-0"}`}>
             Temario
           </p>
         </div>

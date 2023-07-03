@@ -19,9 +19,9 @@ import { Upload } from "lucide-react"
 const formSchema = z.object({
   title: z.string()
     .min(2, { message: "Title must be at least 2 characters." })
-    .max(30,{ message: "Title must not be longer than 30 characters." }),
+    .max(100,{ message: "Title must not be longer than 100 characters." }),
   content: z.string().optional(),
-  videoUrl: z.string({required_error: "Video URL is required."}),
+  videoUrl: z.string().optional(),
   videoSource: z.string({required_error: "video Source is required."}),
 })
 
@@ -78,7 +78,7 @@ export function SectionForm({ section, module, course, processData }: Props) {
     if (section) {      
       form.setValue("title", section.title)
       section.content && form.setValue("content", section.content)
-      form.setValue("videoUrl", section.videoUrl)
+      section.videoUrl && form.setValue("videoUrl", section.videoUrl)
       form.setValue("videoSource", section.videoSource)
     }
   
