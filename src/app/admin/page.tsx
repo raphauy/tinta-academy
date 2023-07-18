@@ -1,13 +1,13 @@
+import CourseBox from "@/components/courseBox";
 import { getAllCourses } from "@/services/courses"
 import { PlusCircle, Trash2 } from "lucide-react";
 import Link from "next/link";
-import CourseBox from "./courseBox";
 
 export default async function AdminPage() {
   const courses= await getAllCourses()
   
   return (
-    <section className="grid items-center justify-center gap-6 pt-6 pb-8 md:py-10">
+    <section className="flex flex-col items-center pt-6 pb-8 md:py-10">
       
       <div className="flex max-w-[980px] flex-col items-center gap-3">
         <h1 className="mb-3 text-3xl font-extrabold leading-tight tracking-tighter text-center md:text-4xl">
@@ -18,21 +18,19 @@ export default async function AdminPage() {
           Selecciona un curso para editar o crea uno nuevo
           <Link href="/admin/course/add"><PlusCircle size={27} color="green" /></Link>
         </p>        
-
-        <div className="grid grid-cols-1 gap-2 p-5 mt-3 text-base border rounded-md text-muted-foreground sm:grid-cols-2 md:grid-cols-3">
-          {
-            courses.map(course => (
-              <Link key={course.id} 
-                    href={`/admin/course/${course.slug}`}
-                    className=""
-              >
-                <CourseBox course={course} />
-              </Link>
-            ))
-          }
-        </div>
       </div>
-      
+      <div className="grid gap-6 mt-5 md:grid-cols-2 lg:grid-cols-3 text-muted-foreground">
+        {
+          courses.map(course => (
+            <Link key={course.id} 
+                  href={`/admin/course/${course.slug}`}
+            >
+              <CourseBox curso={course} />
+            </Link>
+          ))
+        }
+      </div>
+
     </section>
   )
 }
